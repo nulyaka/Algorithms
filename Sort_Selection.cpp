@@ -9,7 +9,8 @@
 #include <vector>
 
 // max-avg-min O(n^2)
-// not adaptive, not stable, no extra memory needed(comparison only)
+// not adaptive, not stable, no extra memory needed(comparisons only)
+// additionaly, minimal amount of swaps
 void SortSelection (std::vector<int> &myArray) {
     
     int minIdx;
