@@ -13,6 +13,16 @@
 #include <vector>
 #include <random>
 
+// for random pivot selection
+int getRandomInRange(int from, int to)
+{
+    std::random_device rd; // obtain a random number from hardware
+    std::mt19937 eng(rd()); // seed the generator
+    std::uniform_int_distribution<> distr(from, to); // define the range
+    
+    return distr(eng);
+}
+
 int partition(std::vector<int> &myArray, int low_arg, int high_arg);
 
 // max O(n^2)
@@ -33,16 +43,6 @@ void SortQuick(std::vector<int> &myArray, int low_arg = 0, int high_arg = INT_MI
         SortQuick(myArray, low_arg, middle - 1);
         SortQuick(myArray, middle + 1, high_arg);
     }
-}
-
-// for random pivot selection
-int getRandomInRange(int from, int to)
-{
-    std::random_device rd; // obtain a random number from hardware
-    std::mt19937 eng(rd()); // seed the generator
-    std::uniform_int_distribution<> distr(from, to); // define the range
-    
-    return distr(eng);
 }
 
 int partition(std::vector<int> &myArray, int low_arg, int high_arg) {
