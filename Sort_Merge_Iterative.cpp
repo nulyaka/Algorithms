@@ -78,5 +78,5 @@ int main (void) {
     
     SortMerge(myArray);
     
-    for (const auto &el: myArray) { std::cout << el << ' '; }
+    for (const auto &el: myArray) { std::cerr << el << ' '; }
 }
