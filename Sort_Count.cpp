@@ -44,5 +44,5 @@ int main (void) {
     
     SortCount(myArray);
     
-    // for (const auto &el: myArray) { std::cerr << el << ' '; }
+    for (const auto &el: myArray) { std::cerr << el << ' '; }
 }
