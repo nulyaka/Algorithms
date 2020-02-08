@@ -71,8 +71,6 @@ int partition(std::vector<int> &myArray, int low_arg, int high_arg) {
     return high;
 }
 
-
-
 int main (void) {
     
     std::vector<int> myArray {11, 13, 7, 12, 16, 9, 24, 5, 10, 3};
