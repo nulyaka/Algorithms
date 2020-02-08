@@ -43,6 +43,7 @@ void merge (std::vector<int> &myArray, int low, int mid, int high) {
     }
 }
 
+// max-avg-min O(n log n)
 void SortMerge (std::vector<int> &myArray) {
     
     int arrSize = (int)myArray.size();
