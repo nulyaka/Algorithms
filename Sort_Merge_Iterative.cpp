@@ -51,10 +51,10 @@ void SortMerge (std::vector<int> &myArray) {
     
     while (pass <= arrSize) {
         
-        for (int pair(0); pair + pass - 1 < myArray.size(); pair += pass) {
+        for (int i(0); i + pass - 1 < myArray.size(); i += pass) {
             
-            low = pair;
-            high = pair + pass - 1;
+            low = i;
+            high = i + pass - 1;
             mid = (low + high) / 2;
             
             merge(myArray, low, mid, high);
