@@ -9,6 +9,35 @@
 #include <iostream>
 #include <vector>
 
+void merge (std::vector<int> &myArray, int low, int mid, int high);
+
+// max-avg-min O(n * log(n))
+// stable, not adaptive, extra memory needed (an array of n size)
+void SortMerge (std::vector<int> &myArray) {
+    
+    int arrSize = (int)myArray.size();
+    int pass(2);
+    int low, mid, high;
+    
+    while (pass <= arrSize) {
+        
+        for (int i(0); i + pass - 1 < myArray.size(); i += pass) {
+            
+            low = i;
+            high = i + pass - 1;
+            mid = (low + high) / 2;
+            
+            merge(myArray, low, mid, high);
+        }
+        
+        pass *= 2;
+    }
+    
+    if (pass / 2 < arrSize) {
+        merge(myArray, 0, pass/2 - 1, arrSize - 1);
+    }
+}
+
 void merge (std::vector<int> &myArray, int low, int mid, int high) {
     
     int firstIt = low, secondIt = mid + 1;
@@ -40,33 +69,6 @@ void merge (std::vector<int> &myArray, int low, int mid, int high) {
     
     for (int i(low), j(0); i <= high; ++i, ++j) {
         myArray.at(i) = temp.at(j);
-    }
-}
-
-// max-avg-min O(n * log(n))
-// stable, not adaptive, extra memory needed (an array of n size)
-void SortMerge (std::vector<int> &myArray) {
-    
-    int arrSize = (int)myArray.size();
-    int pass(2);
-    int low, mid, high;
-    
-    while (pass <= arrSize) {
-        
-        for (int i(0); i + pass - 1 < myArray.size(); i += pass) {
-            
-            low = i;
-            high = i + pass - 1;
-            mid = (low + high) / 2;
-            
-            merge(myArray, low, mid, high);
-        }
-        
-        pass *= 2;
-    }
-    
-    if (pass / 2 < arrSize) {
-        merge(myArray, 0, pass/2 - 1, arrSize - 1);
     }
 }
 
