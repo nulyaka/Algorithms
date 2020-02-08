@@ -37,12 +37,9 @@ void SortQuick(std::vector<int> &myArray, int low_arg = 0, int high_arg = INT_MI
     
     int middle;
     
-    if(low_arg < high_arg) {
-        
-        middle = partition(myArray, low_arg, high_arg);
-        SortQuick(myArray, low_arg, middle - 1);
-        SortQuick(myArray, middle + 1, high_arg);
-    }
+    middle = partition(myArray, low_arg, high_arg);
+    SortQuick(myArray, low_arg, middle - 1);
+    SortQuick(myArray, middle + 1, high_arg);
 }
 
 int partition(std::vector<int> &myArray, int low_arg, int high_arg) {
