@@ -12,7 +12,7 @@
 void merge (std::vector<int> &myArray, int low, int mid, int high);
 
 // max-avg-min O(n * log(n))
-// stable, not adaptive, extra memory needed (an array of n size)
+// stable, not adaptive, extra memory needed (an array of n size, stack of log(n) size)
 void SortMerge (std::vector<int> &myArray, int low_arg = 0, int high_arg = INT_MIN) {
     
     if (low_arg == 0 && high_arg == INT_MIN) {
