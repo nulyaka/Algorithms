@@ -13,6 +13,28 @@
 #include <vector>
 #include <random>
 
+int partition(std::vector<int> &myArray, int low_arg, int high_arg);
+
+// max O(n^2)
+// avg-min O(n * log(n))
+// not stable, not adaptive, no extra memory needed (only comparisons)
+void SortQuick(std::vector<int> &myArray, int low_arg = 0, int high_arg = INT_MIN) {
+    
+    if (low_arg == 0 && high_arg == INT_MIN) {
+        high_arg = (int)myArray.size() - 1;
+    }
+    else if (low_arg >= high_arg) { return; }
+    
+    int middle;
+    
+    if(low_arg < high_arg) {
+        
+        middle = partition(myArray, low_arg, high_arg);
+        SortQuick(myArray, low_arg, middle - 1);
+        SortQuick(myArray, middle + 1, high_arg);
+    }
+}
+
 // for random pivot selection
 int getRandomInRange(int from, int to)
 {
@@ -49,24 +71,7 @@ int partition(std::vector<int> &myArray, int low_arg, int high_arg) {
     return high;
 }
 
-// max O(n^2)
-// avg-min O(n * log(n))
-void SortQuick(std::vector<int> &myArray, int low_arg = 0, int high_arg = INT_MIN) {
-    
-    if (low_arg == 0 && high_arg == INT_MIN) {
-        high_arg = (int)myArray.size() - 1;
-    }
-    else if (low_arg >= high_arg) { return; }
-    
-    int middle;
-    
-    if(low_arg < high_arg) {
-        
-        middle = partition(myArray, low_arg, high_arg);
-        SortQuick(myArray, low_arg, middle - 1);
-        SortQuick(myArray, middle + 1, high_arg);
-    }
-}
+
 
 int main (void) {
     
