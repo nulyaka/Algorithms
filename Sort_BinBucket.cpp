@@ -43,7 +43,7 @@ void SortCount (std::vector<int> &myArray) {
             tempArr.at(el)->next = nullptr;
         }
         else {
-
+            
             NodeBin *curr = tempArr.at(el);
             
             while (curr->next != nullptr) { curr = curr->next; }
@@ -53,9 +53,7 @@ void SortCount (std::vector<int> &myArray) {
         }
     }
     
-    int myArrayIdx(0),
-        tempArrIdx(0),
-        countDublicates(0);
+    int myArrayIdx(0);
     
     for (auto &el: tempArr) {
         
@@ -63,7 +61,7 @@ void SortCount (std::vector<int> &myArray) {
         
         while (curr != nullptr) {
             
-            countDublicates++;
+            myArray.at(myArrayIdx++) = curr->data;
             
             NodeBin *de_alloc = curr;
             curr = curr->next;
@@ -71,10 +69,7 @@ void SortCount (std::vector<int> &myArray) {
             delete de_alloc;
             de_alloc = nullptr;
         }
-        
-        while (countDublicates--) { myArray.at(myArrayIdx++) = tempArrIdx; }
-        tempArrIdx++;
-        countDublicates = 0;
+        el = nullptr;
     }
 }
 
