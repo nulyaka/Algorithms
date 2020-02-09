@@ -29,7 +29,7 @@ int findMax (std::vector<int> &myArray) {
 
 // max-avg-min O(n)
 // stable, not adaptive, extra memory needed (array of max element size)
-void SortCount (std::vector<int> &myArray) {
+void SortBinBucket (std::vector<int> &myArray) {
     
     int tempArrSize = findMax(myArray) + 1;
     std::vector<NodeBin*> tempArr (tempArrSize, nullptr);
@@ -57,19 +57,26 @@ void SortCount (std::vector<int> &myArray) {
     
     for (auto &el: tempArr) {
         
-        NodeBin *curr = el;
-        
-        while (curr != nullptr) {
+        if (el != nullptr) {
             
-            myArray.at(myArrayIdx++) = curr->data;
+            myArray.at(myArrayIdx++) = el->data;
             
-            NodeBin *de_alloc = curr;
-            curr = curr->next;
+            NodeBin *curr = el->next;
             
-            delete de_alloc;
-            de_alloc = nullptr;
+            while (curr != nullptr) {
+                
+                myArray.at(myArrayIdx++) = curr->data;
+                
+                NodeBin *de_alloc = curr;
+                curr = curr->next;
+                
+                delete de_alloc;
+                de_alloc = nullptr;
+            }
+            
+            delete el;
+            el = nullptr;
         }
-        el = nullptr;
     }
 }
 
@@ -77,7 +84,7 @@ int main (void) {
     
     std::vector<int> myArray {11, 11, 13, 7, 12, 16, 9, 24, 5, 10, 3};
     
-    SortCount(myArray);
+    SortBinBucket (myArray);
     
     for (const auto &el: myArray) { std::cerr << el << ' '; }
 }
