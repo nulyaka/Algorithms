@@ -1,8 +1,8 @@
 //
-//  Sort_BinBucket.cpp
+//  Sort_Radix.cpp
 //  SortingTechniques
 //
-//  Created by Nulyaka on 2/8/20.
+//  Created by Nulyaka on 2/9/20.
 //  Copyright © 2020 Nulyaka. All rights reserved.
 //
 
@@ -29,7 +29,7 @@ int findMax (std::vector<int> &myArray) {
 }
 
 // max-avg-min O(n)
-// stable, not adaptive, extra memory needed (array of max element size)
+// stable, not adaptive, extra memory needed (array of size 10)
 void SortCount (std::vector<int> &myArray) {
     
     std::vector<NodeBin*> tempArr (10, nullptr);
