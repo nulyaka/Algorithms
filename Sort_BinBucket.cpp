@@ -36,20 +36,20 @@ void SortCount (std::vector<int> &myArray) {
     
     for (auto &el: myArray) {
         
+        NodeBin *temp = new NodeBin;
+        temp->data = el;
+        temp->next = nullptr;
+        
         if (tempArr.at(el) == nullptr) {
             
-            tempArr.at(el) = new NodeBin;
-            tempArr.at(el)->data = el;
-            tempArr.at(el)->next = nullptr;
+            tempArr.at(el) = temp;
         }
         else {
             
             NodeBin *curr = tempArr.at(el);
             
             while (curr->next != nullptr) { curr = curr->next; }
-            curr->next = new NodeBin;
-            curr->next->data = el;
-            curr->next->next = nullptr;
+            curr->next = temp;
         }
     }
     
