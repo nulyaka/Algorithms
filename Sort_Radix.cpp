@@ -1,14 +1,13 @@
 //
-//  Sort_Radix.cpp
+//  Sort_BinBucket.cpp
 //  SortingTechniques
 //
-//  Created by Nulyaka on 2/9/20.
+//  Created by Nulyaka on 2/8/20.
 //  Copyright © 2020 Nulyaka. All rights reserved.
 //
 
 #include <iostream>
 #include <vector>
-#include <math.h>
 
 struct NodeBin {
     
@@ -29,66 +28,54 @@ int findMax (std::vector<int> &myArray) {
 }
 
 // max-avg-min O(n)
-// stable, not adaptive, extra memory needed (array of size 10)
+// stable, not adaptive, extra memory needed (array of max element size)
 void SortCount (std::vector<int> &myArray) {
     
-    std::vector<NodeBin*> tempArr (10, nullptr);
+    int tempArrSize = findMax(myArray) + 1;
+    std::vector<NodeBin*> tempArr (tempArrSize, nullptr);
     
-    int numOfPasses(0), maxElement = findMax(myArray);
-    
-    while (maxElement) {
+    for (auto &el: myArray) {
         
-        numOfPasses++;
-        maxElement = maxElement / 10;
+        if (tempArr.at(el) == nullptr) {
+            
+            tempArr.at(el) = new NodeBin;
+            tempArr.at(el)->data = el;
+            tempArr.at(el)->next = nullptr;
+        }
+        else {
+            
+            NodeBin *curr = tempArr.at(el);
+            
+            while (curr->next != nullptr) { curr = curr->next; }
+            curr->next = new NodeBin;
+            curr->next->data = el;
+            curr->next->next = nullptr;
+        }
     }
     
-    for (int pass(1), divisor(1); pass <= numOfPasses; ++pass, divisor *= 10) {
+    int myArrayIdx(0);
+    
+    for (auto &el: tempArr) {
         
-        for (auto &el: myArray) {
+        NodeBin *curr = el;
+        
+        while (curr != nullptr) {
             
-            int lastDigits = (el / divisor) % 10;
+            myArray.at(myArrayIdx++) = curr->data;
             
-            if (tempArr.at(lastDigits) == nullptr) {
-                
-                tempArr.at(lastDigits) = new NodeBin;
-                tempArr.at(lastDigits)->data = el;
-                tempArr.at(lastDigits)->next = nullptr;
-            }
-            else {
-                
-                NodeBin *curr = tempArr.at(lastDigits);
-                
-                while (curr->next != nullptr) { curr = curr->next; }
-                curr->next = new NodeBin;
-                curr->next->data = el;
-                curr->next->next = nullptr;
-            }
+            NodeBin *de_alloc = curr;
+            curr = curr->next;
+            
+            delete de_alloc;
+            de_alloc = nullptr;
         }
-        
-        int myArrayIdx(0);
-        
-        for (auto &el: tempArr) {
-            
-            NodeBin *curr = el;
-            
-            while (curr != nullptr) {
-                
-                myArray.at(myArrayIdx++) = curr->data;
-                
-                NodeBin *de_alloc = curr;
-                curr = curr->next;
-                
-                delete de_alloc;
-                de_alloc = nullptr;
-            }
-            el = nullptr;
-        }
+        el = nullptr;
     }
 }
 
 int main (void) {
     
-    std::vector<int> myArray {237, 146, 259, 348, 152, 163, 235, 48, 36, 62};
+    std::vector<int> myArray {11, 11, 13, 7, 12, 16, 9, 24, 5, 10, 3};
     
     SortCount(myArray);
     
