@@ -1,5 +1,5 @@
 //
-//  Hash_LinearProbing.cpp
+//  Hash_Probing.cpp
 //  Hashing Techniques
 //
 //  Created by Nulyaka on 2/10/20.
@@ -20,7 +20,7 @@
 // e.g  d = 25, s = 20, i = 0
 // h(25) = ((25 % 20) + 0) % 20 = 5 (this is the index, where we store our data)
 // if cell of hash on that index is already occupied by some data,
-// we againg use the formula, but changing i = i + 1 (1, 2, 3, 4, ..., s - 1)
+// we again use the formula, but changing i = i + 1 (1, 2, 3, 4, ..., s - 1)
 
 int probeLinear (std::vector<int> &hashTable, int data) {
     
@@ -33,6 +33,10 @@ int probeLinear (std::vector<int> &hashTable, int data) {
     return (lastDigit + index) % hashSize;
 }
 
+// Quadratic Probing formula is the same:
+// h(d) = (f(d) + i) % s
+// but changing i = i^2 (0, 1, 4, 9, 16, ...)
+
 int probeQuadratic (std::vector<int> &hashTable, int data) {
     
     int hashSize = static_cast<int>(hashTable.size());
@@ -42,6 +46,24 @@ int probeQuadratic (std::vector<int> &hashTable, int data) {
     while (hashTable.at((lastDigit + index) % hashSize) != INT_MIN) { index *= index; }
     
     return (lastDigit + index) % hashSize;
+}
+
+bool searchDataLinear (std::vector<int> &hashTable, int data) {
+    
+    int hashSize = static_cast<int>(hashTable.size());
+    int searchIndex = data % hashSize;
+    
+    while (hashTable.at(searchIndex) != INT_MIN) {
+        
+        if (hashTable.at(searchIndex) == data) { return true; }
+        else { 
+            // in order to search quadratic, call function
+            // probeQuadratic instead of probeLinear
+            searchIndex = probeLinear(hashTable, data); 
+        }
+    }
+    
+    return false;
 }
 
 void insertData (std::vector<int> &hashTable, int data) {
@@ -55,20 +77,6 @@ void insertData (std::vector<int> &hashTable, int data) {
     }
     
     hashTable.at(storeToIndex) = data;
-}
-
-bool searchDataLinear (std::vector<int> &hashTable, int data) {
-    
-    int hashSize = static_cast<int>(hashTable.size());
-    int searchIndex = data % hashSize;
-    
-    while (hashTable.at(searchIndex) != INT_MIN) {
-        
-        if (hashTable.at(searchIndex) == data) { return true; }
-        else { searchIndex = probeLinear(hashTable, data); }
-    }
-    
-    return false;
 }
 
 std::vector<int> insertArray (std::vector<int> &myArray) {
