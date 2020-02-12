@@ -22,6 +22,7 @@ int getRandomInRange(int from, int to)
     return distr(eng);
 }
 
+// O(V + E) -> O(n)
 void DFS_adjList (std::vector<std::list<int>> &myGraph) {
     
     int graphSize = static_cast<int>( myGraph.size() );
