@@ -21,7 +21,6 @@ int getRandomInRange(int from, int to)
     return distr(eng);
 }
 
-
 void BFS_matrix (const std::vector<std::vector<bool>> &myGraph) {
     
     int rowSize = static_cast<int>(myGraph.at(0).size());
