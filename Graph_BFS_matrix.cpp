@@ -24,12 +24,12 @@ int getRandomInRange(int from, int to)
 // O(n^2)
 void BFS_matrix (const std::vector<std::vector<bool>> &myGraph) {
     
-    int rowSize = static_cast<int>(myGraph.at(0).size());
-    std::vector<bool> visited (rowSize, false);
+    int mtrxSize = static_cast<int>(myGraph.size());
+    std::vector<bool> visited (mtrxSize, false);
     int counter(1);
     
     std::queue<int> myQueue;
-    myQueue.push(getRandomInRange(1, rowSize - 1));
+    myQueue.push(getRandomInRange(1, mtrxSize - 1));
     
     while (!myQueue.empty()) {
         
@@ -43,7 +43,7 @@ void BFS_matrix (const std::vector<std::vector<bool>> &myGraph) {
             counter++;
         }
         
-        for (int secondVertex(1); secondVertex < rowSize; ++secondVertex) {
+        for (int secondVertex(1); secondVertex < mtrxSize; ++secondVertex) {
             
             if (myGraph.at(vertex).at(secondVertex) && !visited.at(secondVertex)) {
                 
