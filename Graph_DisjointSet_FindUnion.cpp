@@ -87,7 +87,7 @@ int main (void) {
     //   (5) ––– (7)
     //
     myGraph_c.edges = { {0, 1}, {2, 3}, {4, 5}, {6, 7}, {1, 3},
-        {1, 4}, {0, 2}, {5, 7}, {4, 6} };
+                        {1, 4}, {0, 2}, {5, 7}, {4, 6} };
     
     // true
     std::cout << myGraph_c.isCycle() << std::endl;
@@ -108,8 +108,8 @@ int main (void) {
     //    |       |
     //   (5)     (7)
     //
-    myGraph_not_c.edges = { {0, 1}, {2, 3}, {4, 5}, {6, 7}, {1, 3},
-        {1, 4}, {4, 6} };
+    myGraph_not_c.edges = { {0, 1}, {2, 3}, {4, 5}, {6, 7},
+                            {1, 3}, {1, 4}, {4, 6} };
     
     // false
     std::cout << myGraph_not_c.isCycle() << std::endl;
