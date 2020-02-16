@@ -28,10 +28,7 @@ public:
     
     Graph (int vertices_number, int edges_number):
     vertices_number_m(vertices_number),
-    edges_number_m(edges_number) {
-        
-        edges.resize(edges_number);
-    }
+    edges_number_m(edges_number) { edges.resize(edges_number); }
     
     int find_m (std::vector<int> &parent, int index);
     void union_m (std::vector<int> &parent, int firstv, int secondV);
