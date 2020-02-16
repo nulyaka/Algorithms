@@ -31,7 +31,7 @@ public:
     edges_number_m(edges_number) { edges.resize(edges_number); }
     
     int find_m (std::vector<int> &parent, int index);
-    void union_m (std::vector<int> &parent, int firstv, int secondV);
+    void union_m (std::vector<int> &parent, int firstV, int secondV);
     bool isCycle ();
 };
 
