@@ -29,25 +29,27 @@ void BFS_matrix (const std::vector<std::vector<bool>> &myGraph) {
     int counter(1);
     
     std::queue<int> myQueue;
-    myQueue.push(getRandomInRange(1, mtrxSize - 1));
+    int root = getRandomInRange(1, mtrxSize - 1);
+    
+    myQueue.push(root);
+    visited.at(root) = true;
+    std::cout << counter << ") visited -> " << root << std::endl;
+    counter++;
     
     while (!myQueue.empty()) {
         
         int vertex = myQueue.front();
         myQueue.pop();
         
-        if (!visited.at(vertex)) {
-            
-            visited.at(vertex) = true;
-            std::cout << counter << ") visited -> " << vertex << std::endl;
-            counter++;
-        }
-        
         for (int secondVertex(1); secondVertex < mtrxSize; ++secondVertex) {
             
             if (myGraph.at(vertex).at(secondVertex) && !visited.at(secondVertex)) {
-                visited.at(secondVertex) = true;
+                
                 myQueue.push(secondVertex);
+                visited.at(secondVertex) = true;
+                
+                std::cout << counter << ") visited -> " << secondVertex << std::endl;
+                counter++;
             }
         }
     }
