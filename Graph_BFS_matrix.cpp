@@ -46,7 +46,7 @@ void BFS_matrix (const std::vector<std::vector<bool>> &myGraph) {
         for (int secondVertex(1); secondVertex < mtrxSize; ++secondVertex) {
             
             if (myGraph.at(vertex).at(secondVertex) && !visited.at(secondVertex)) {
-                
+                visited.at(secondVertex) = true;
                 myQueue.push(secondVertex);
             }
         }
