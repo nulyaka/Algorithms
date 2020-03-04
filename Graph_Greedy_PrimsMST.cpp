@@ -28,9 +28,21 @@ int minCostVertex (std::vector<int> &cost, std::vector<bool> &visited) {
     return minIndex;
 }
 
+// Prints:
+// Edges 	Weight
+// 2->1	  16
+// 3->2	  12
+// 4->3	  22
+// 5->4	  25
+// 0->5  	10
+// 1->6  	14
+
+// path: 0 -> 5 -> 4 -> 3 -> 2 -> 1 -> 6
+
 void printPath (std::vector<int> &path, std::vector<std::vector<int>> &myGraph) {
     
     std::cout << "Edges \tWeight" << std::endl;
+  
     for (int v(1); v < path.size(); ++v) {
         
         std::cout << path.at(v) << "->" << v << "\t" << myGraph.at(v).at(path.at(v)) << std::endl;
