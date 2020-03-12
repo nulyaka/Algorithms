@@ -2,4 +2,4 @@
 
 Practicing theoretical knowledge. Implementation of algorithmic techniques: Sorting, Hashing, Greedy, Dynamic programming, Graph and Network. 
 
-Up-to-date
+UP-TO-DATE
