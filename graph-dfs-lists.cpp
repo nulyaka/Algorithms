@@ -1,6 +1,6 @@
 //
-//  Graph_DFS_adjList.cpp
-//  Graph
+//  graph-dfs-lists.cpp
+//  graph
 //
 //  Created by Nulyaka on 2/12/20.
 //  Copyright © 2020 Nulyaka. All rights reserved.
