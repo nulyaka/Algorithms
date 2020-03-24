@@ -1,7 +1,7 @@
   
 //
-//  Graph_Greedy_PrimsMST.cpp
-//  Graph
+//  graph-prims-mst.cpp
+//  graph
 //
 //  Created by Nulyaka on 3/4/20.
 //  Copyright © 2020 Nulyaka. All rights reserved.
