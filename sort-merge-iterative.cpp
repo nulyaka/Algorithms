@@ -1,6 +1,6 @@
 //
-//  Sort_Merge_Iterative.cpp
-//  SortingTechniques
+//  sort-merge-iterative.cpp
+//  sort
 //
 //  Created by Nulyaka on 2/8/20.
 //  Copyright © 2020 Nulyaka. All rights reserved.
