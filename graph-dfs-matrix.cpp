@@ -1,6 +1,6 @@
 //
-//  Graph_DFS_matrix.cpp
-//  Graph
+//  graph-dfs-matrix.cpp
+//  graph
 //
 //  Created by Nulyaka on 2/12/20.
 //  Copyright © 2020 Nulyaka. All rights reserved.
