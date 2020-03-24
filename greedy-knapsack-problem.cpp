@@ -1,6 +1,6 @@
 //
-//  Greedy_Knapsack_Problem.cpp
-//  Greedy
+//  greedy-knapsack-problem.cpp
+//  greedy
 //
 //  Created by Nulyaka on 2/20/20.
 //  Copyright © 2020 Nulyaka. All rights reserved.
