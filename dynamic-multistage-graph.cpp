@@ -1,6 +1,6 @@
 //
-//  Dynamic_MultiStage_Graph.cpp
-//  Dynamic
+//  dynamic-multistage-graph.cpp
+//  dynamic
 //
 //  Created by Nulyaka on 3/7/20.
 //  Copyright © 2020 Nulyaka. All rights reserved.
