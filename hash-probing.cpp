@@ -1,6 +1,6 @@
 //
-//  Hash_Probing.cpp
-//  Hashing Techniques
+//  hash-probing.cpp
+//  hash
 //
 //  Created by Nulyaka on 2/10/20.
 //  Copyright © 2020 Nulyaka. All rights reserved.
