@@ -1,6 +1,6 @@
 //
-//  Greedy_OptimalMergePattern.cpp
-//  Greedy
+//  greedy-optimal-merge-pattern.cpp
+//  greedy
 //
 //  Created by Nulyaka on 2/29/20.
 //  Copyright © 2020 Nulyaka. All rights reserved.
