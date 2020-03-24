@@ -1,6 +1,6 @@
 //
-//  Graph_DisjointSet_FindUnion.cpp
-//  Graph_DisjointSet
+//  graph-find-union.cpp
+//  graph
 //
 //  Created by Nulyaka on 2/15/20.
 //  Copyright © 2020 Nulyaka. All rights reserved.
