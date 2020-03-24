@@ -1,6 +1,6 @@
 //
-//  Sort_Merge_Recursive.cpp
-//  SortingTechniques
+//  sort-merge-recursive.cpp
+//  sort
 //
 //  Created by Nulyaka on 2/8/20.
 //  Copyright © 2020 Nulyaka. All rights reserved.
