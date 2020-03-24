@@ -1,6 +1,6 @@
 //
-//  Greedy_JobSeqWithDeadlines_Problem.cpp
-//  Greedy
+//  greedy-job-sheduling-problem.cpp
+//  greedy
 //
 //  Created by Nulyaka on 2/28/20.
 //  Copyright © 2020 Nulyaka. All rights reserved.
