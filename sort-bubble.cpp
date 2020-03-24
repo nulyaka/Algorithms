@@ -1,6 +1,6 @@
 //
-//  Sort_Bubble.cpp
-//  SortingTechniques
+//  sort-bubble.cpp
+//  sort
 //
 //  Created by Nulyaka on 2/7/20.
 //  Copyright © 2020 Nulyaka. All rights reserved.
