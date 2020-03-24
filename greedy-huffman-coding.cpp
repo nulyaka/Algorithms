@@ -1,7 +1,7 @@
   
 //
-//  Greedy_HuffmanCoding.cpp
-//  Greedy
+//  greedy-huffman-coding.cpp
+//  greedy
 //
 //  Created by Nulyaka on 3/3/20.
 //  Copyright © 2020 Nulyaka. All rights reserved.
