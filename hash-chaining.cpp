@@ -1,6 +1,6 @@
 //
-//  Hash_Chaining.cpp
-//  Hashing Techniques
+//  hash-chaining.cpp
+//  hash
 //
 //  Created by Nulyaka on 2/9/20.
 //  Copyright © 2020 Nulyaka. All rights reserved.
